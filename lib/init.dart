@@ -8,7 +8,13 @@ const String khomeAppBarTitle='BMI Calculator';
 
 
 // Home Screen Cards Constants
+
+enum gender {
+man,
+woman,
+}
 const Color khomeCardBgColor=Color(0xff1d1e33);
+const Color khomeInactiveCardBgColor=Color(0xff111328);
 const double khomeCardmargin=15.0;
 const double khomeCardRadius=10.0;
 const double khomeCardiconsize=80.0;

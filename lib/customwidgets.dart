@@ -19,6 +19,8 @@ class cardsHomescreen extends StatelessWidget {
   }
 }
 
+
+// home screen male female icon Card
 class CardChild extends StatelessWidget {
   CardChild(
       this.icon,
@@ -49,5 +51,7 @@ final String iconText;
   }
 }
 
+
+// Home Screen Slider wadit
 
 

@@ -15,6 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  gender? selectedgender;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,15 +33,29 @@ class _MyAppState extends State<MyApp> {
              child: Row(
                children: [
                 Expanded(
-                  child: cardsHomescreen(
-                    khomeCardBgColor,
-                    CardChild(  FontAwesomeIcons.mars, 'Male'),
+                  child: GestureDetector(
+                    onTap: (){
+                      setState((){
+                        selectedgender=gender.man;
+                      });
+                    },
+                    child: cardsHomescreen(
+                      selectedgender==gender.man? khomeCardBgColor: khomeInactiveCardBgColor,
+                      CardChild(  FontAwesomeIcons.mars, 'Male'),
+                    ),
                   ),
                 ),
                  Expanded(
-                   child:  cardsHomescreen(
-                     khomeCardBgColor,
-                     CardChild(  FontAwesomeIcons.venus, 'Female'),
+                   child:  GestureDetector(
+                     onTap: (){
+                       setState((){
+                         selectedgender=gender.woman;
+                       });
+                     },
+                     child: cardsHomescreen(
+                       selectedgender==gender.woman? khomeCardBgColor: khomeInactiveCardBgColor,
+                       CardChild(  FontAwesomeIcons.venus, 'Female'),
+                     ),
                    ),
                  ),
                ],
@@ -76,3 +91,4 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
