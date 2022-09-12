@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:bmo_calculator_flutter/customwidgets.dart';
 import 'package:bmo_calculator_flutter/init.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,10 +19,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xff0A0D22),
+        backgroundColor: khomeBgColor,
         appBar: AppBar(
-          backgroundColor: Color(0xff0A0D22),
-          title: Text('BMI Calculor'),
+          backgroundColor: khomeBgColor,
+          title: Text(khomeAppBarTitle),
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -30,25 +32,40 @@ class _MyAppState extends State<MyApp> {
              child: Row(
                children: [
                 Expanded(
-                  child:cardsHomescreen(),
+                  child: cardsHomescreen(
+                    khomeCardBgColor,
+                    CardChild(  FontAwesomeIcons.mars, 'Male'),
+                  ),
                 ),
                  Expanded(
-                   child: cardsHomescreen(),
+                   child:  cardsHomescreen(
+                     khomeCardBgColor,
+                     CardChild(  FontAwesomeIcons.venus, 'Female'),
+                   ),
                  ),
                ],
              ),
            ),
             Expanded(
-              child: cardsHomescreen(),
+              child: cardsHomescreen(
+                khomeCardBgColor,
+                CardChild(  FontAwesomeIcons.mars, 'Male'),
+              ),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
-                    child:cardsHomescreen(),
+                    child: cardsHomescreen(
+                      khomeCardBgColor,
+                      CardChild(  FontAwesomeIcons.mars, 'Male'),
+                    ),
                   ),
                   Expanded(
-                    child: cardsHomescreen(),
+                    child: cardsHomescreen(
+                      khomeCardBgColor,
+                      CardChild(  FontAwesomeIcons.mars, 'Male'),
+                    ),
                   ),
                 ],
               ),
