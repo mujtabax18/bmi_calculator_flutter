@@ -8,6 +8,7 @@ class cardsHomescreen extends StatelessWidget {
   cardsHomescreen({this.color, this.cardChild, this.onpress});
   Color color;
   Widget cardChild;
+
   void Function() onpress;
   @override
   Widget build(BuildContext context) {

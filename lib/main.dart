@@ -16,6 +16,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   gender selectedgender;
+  int height=150;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -59,12 +60,40 @@ class _MyAppState extends State<MyApp> {
               child: cardsHomescreen(
               color:   khomeCardBgColor,
                 cardChild: Column(
+
                   children: [
                     Text(
                       "Height",
                       style: khomeCardtextStyle,
+                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(height.toString(),
+                      style: TextStyle(
+                        fontSize: 80.0,
+                        fontWeight: FontWeight.w900,
+                        color: khomeCardiconcolor,
+                      ),
+                      ),
+                      Text("CM",
+                      style: khomeCardtextStyle
+                        ,),
+                    ],
+                  ),
+                    Slider(value: height.toDouble(),
+                      max: 250,
+                      min: 120,
+                      onChanged: (double sldv){
+                        setState((){
+                          height=sldv.round();
+                        });
+                      },
                     )
                   ],
+
                 ),
               ),
             ),
