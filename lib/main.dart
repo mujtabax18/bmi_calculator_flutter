@@ -8,14 +8,14 @@ void main() {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  gender? selectedgender;
+  gender selectedgender;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,29 +33,23 @@ class _MyAppState extends State<MyApp> {
              child: Row(
                children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                      setState((){
-                        selectedgender=gender.man;
-                      });
-                    },
-                    child: cardsHomescreen(
-                      selectedgender==gender.man? khomeCardBgColor: khomeInactiveCardBgColor,
-                      CardChild(  FontAwesomeIcons.mars, 'Male'),
-                    ),
+                  child: cardsHomescreen(
+                   color: selectedgender==gender.man? khomeCardBgColor: khomeInactiveCardBgColor,
+                   cardChild: CardChild(  FontAwesomeIcons.mars, 'Male'),
+                  onpress:(){
+                    setState((){
+                    selectedgender=gender.man;
+                    });},
                   ),
                 ),
                  Expanded(
-                   child:  GestureDetector(
-                     onTap: (){
+                   child:  cardsHomescreen(
+                    color: selectedgender==gender.woman? khomeCardBgColor: khomeInactiveCardBgColor,
+                    cardChild: CardChild(  FontAwesomeIcons.venus, 'Female'),
+                     onpress:(){
                        setState((){
                          selectedgender=gender.woman;
-                       });
-                     },
-                     child: cardsHomescreen(
-                       selectedgender==gender.woman? khomeCardBgColor: khomeInactiveCardBgColor,
-                       CardChild(  FontAwesomeIcons.venus, 'Female'),
-                     ),
+                       });},
                    ),
                  ),
                ],
@@ -63,8 +57,15 @@ class _MyAppState extends State<MyApp> {
            ),
             Expanded(
               child: cardsHomescreen(
-                khomeCardBgColor,
-                CardChild(  FontAwesomeIcons.mars, 'Male'),
+              color:   khomeCardBgColor,
+                cardChild: Column(
+                  children: [
+                    Text(
+                      "Height",
+                      style: khomeCardtextStyle,
+                    )
+                  ],
+                ),
               ),
             ),
             Expanded(
@@ -72,14 +73,13 @@ class _MyAppState extends State<MyApp> {
                 children: [
                   Expanded(
                     child: cardsHomescreen(
-                      khomeCardBgColor,
-                      CardChild(  FontAwesomeIcons.mars, 'Male'),
+
+                      color:   khomeCardBgColor,
                     ),
                   ),
                   Expanded(
                     child: cardsHomescreen(
-                      khomeCardBgColor,
-                      CardChild(  FontAwesomeIcons.mars, 'Male'),
+                      color:   khomeCardBgColor,
                     ),
                   ),
                 ],

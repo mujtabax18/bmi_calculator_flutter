@@ -2,20 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:bmo_calculator_flutter/init.dart';
 
 
+
 // Home Screen Cards shapes / Boxes Containg all the functionalities
 class cardsHomescreen extends StatelessWidget {
-  cardsHomescreen(this.color,this.cardChild);
- final Color color;
- final Widget cardChild;
+  cardsHomescreen({this.color, this.cardChild, this.onpress});
+  Color color;
+  Widget cardChild;
+  void Function() onpress;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: EdgeInsets.all(khomeCardmargin),
-      decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(khomeCardRadius)
-      ),);
+    return GestureDetector(
+      onTap: onpress,
+      child: Container(
+        child: cardChild,
+        margin: EdgeInsets.all(khomeCardmargin),
+        decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(khomeCardRadius)
+        ),
+      ),
+    );
   }
 }
 
