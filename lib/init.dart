@@ -25,3 +25,15 @@ const TextStyle khomeCardtextStyle=TextStyle(
   fontSize: 18.0,
   color: khomeCardiconcolor,
 );
+// Home Height Card theme
+const TextStyle khomeHeightCardHeightText=TextStyle(
+  fontSize: 80.0,
+  fontWeight: FontWeight.w900,
+  color: khomeCardiconcolor,
+);
+
+
+const String khomeSliderHeightTitle ='Height';
+const String khomeSliderHeightunit ='CM';
+const Color khomeSliderActiveColor = Color(0xFFEB1555);
+const Color khomeSliderInActiveColor = Color(0xFF8D8E98);
