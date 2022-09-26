@@ -26,7 +26,7 @@ const TextStyle khomeCardtextStyle=TextStyle(
   color: khomeCardiconcolor,
 );
 // Home Height Card theme
-const TextStyle khomeHeightCardHeightText=TextStyle(
+const TextStyle khomeHeightCardHeightTextStyle=TextStyle(
   fontSize: 80.0,
   fontWeight: FontWeight.w900,
   color: khomeCardiconcolor,

@@ -13,6 +13,8 @@ class homeInputPage extends StatefulWidget {
 class _homeInputPageState extends State<homeInputPage> {
   gender selectedgender;
   int height=150;
+  int weight=15;
+  int age=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +25,11 @@ class _homeInputPageState extends State<homeInputPage> {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
           Expanded(
             child: Row(
+              /// Top Male Female Row
               children: [
                 Expanded(
                   child: cardsHomescreen(
@@ -52,10 +55,10 @@ class _homeInputPageState extends State<homeInputPage> {
             ),
           ),
           Expanded(
+            /// Height Card
             child: cardsHomescreen(
               color:   khomeCardBgColor,
               cardChild: Column(
-
                 children: [
                   Text(
                     khomeSliderHeightTitle,
@@ -67,7 +70,7 @@ class _homeInputPageState extends State<homeInputPage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(height.toString(),
-                        style: khomeHeightCardHeightText,
+                        style: khomeHeightCardHeightTextStyle,
                       ),
                       Text(khomeSliderHeightunit,
                         style: khomeCardtextStyle
@@ -102,20 +105,105 @@ class _homeInputPageState extends State<homeInputPage> {
             ),
           ),
           Expanded(
+            /// Age and Weight Row
             child: Row(
               children: [
                 Expanded(
                   child: cardsHomescreen(
-
                     color:   khomeCardBgColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Age",
+                          style: khomeCardtextStyle,
+                        ),
+                        Text(age.toString(),
+                          style: khomeHeightCardHeightTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: (){
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: (){
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   child: cardsHomescreen(
                     color:   khomeCardBgColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Weight",
+                        style: khomeCardtextStyle,
+
+                        ),
+                        Text(weight.toString(),
+                        style: khomeHeightCardHeightTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: (){
+                                setState(() {
+                                  weight++;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: (){
+                                setState(() {
+                                  weight--;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
+            ),
+          ),
+          GestureDetector(
+
+            onTap: (){},
+            child: Container(
+
+              child: Center(child: Text('Calculate',style: TextStyle(
+                fontSize: 30,
+              ),)),
+              color: Colors.red,
+              margin: EdgeInsets.only(top: 10.0),
+              width: double.infinity,
+              height: 50.0,
             ),
           ),
         ],
