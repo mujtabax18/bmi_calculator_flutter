@@ -32,6 +32,27 @@ const TextStyle khomeHeightCardHeightTextStyle=TextStyle(
   color: khomeCardiconcolor,
 );
 
+const TextStyle kLargeButtonTextStyle=TextStyle(
+  fontSize: 30.0,
+  fontWeight: FontWeight.w900,
+  color: khomeCardiconcolor,
+);
+
+const TextStyle kTitleTextStyle=TextStyle(
+  fontSize: 50.0,
+  fontWeight: FontWeight.w900,
+  color: khomeCardiconcolor,
+);
+
+const TextStyle kResultTextStyle=TextStyle(
+  fontSize: 20.0,
+  color: Colors.green,
+);
+const TextStyle kResultMassageStyle=TextStyle(
+  fontSize: 20.0,
+
+);
+
 
 const String khomeSliderHeightTitle ='Height';
 const String khomeSliderHeightunit ='CM';

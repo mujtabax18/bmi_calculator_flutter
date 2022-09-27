@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bmo_calculator_flutter/init.dart';
+import 'package:bmo_calculator_flutter/Helper/init.dart';
 
 
 
@@ -83,5 +83,23 @@ final String iconText;
 
 
 // Home Screen Slider wadit
+
+GestureDetector bottomLargeButton(
+    {BuildContext context, String btnText, Function onTap}) {
+  return GestureDetector(
+    onTap: onTap,
+    child: Container(
+
+      child: Center(child: Text(btnText,style: TextStyle(
+        fontSize: 30,
+      ),)),
+      color: Colors.red,
+      margin: EdgeInsets.only(top: 10.0),
+      width: double.infinity,
+      height: 50.0,
+    ),
+  );
+}
+
 
 
