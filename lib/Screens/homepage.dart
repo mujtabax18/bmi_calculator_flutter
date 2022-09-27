@@ -1,7 +1,9 @@
+import 'package:bmo_calculator_flutter/Screens/resultScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:bmo_calculator_flutter/Helper/init.dart';
 import 'package:bmo_calculator_flutter/Helper/customwidgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:bmo_calculator_flutter/bmicalculatorbrain.dart';
 
 class homeInputPage extends StatefulWidget {
 
@@ -14,7 +16,7 @@ class _homeInputPageState extends State<homeInputPage> {
   gender selectedgender;
   int height = 150;
   int weight = 15;
-  int age = 0;
+  int age = 10;
 
   @override
   Widget build(BuildContext context) {
@@ -202,7 +204,17 @@ class _homeInputPageState extends State<homeInputPage> {
             ),
           ),
           bottomLargeButton(context: context, btnText: 'Calculate',onTap: (){
-            Navigator.of(context).pushNamed('/result');
+            CalculatorBrain cal=CalculatorBrain(height: height,weight: weight);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+              builder: (context)=>resultShow(
+                  result: cal.calculateBMI(),
+                  resultMassage: cal.getInterpretation(),
+                  resultText: cal.getResult()
+                ,)
+              ,)
+              ,);
           }),
         ],
       ),

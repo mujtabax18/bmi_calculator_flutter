@@ -5,6 +5,10 @@ import 'package:flutter/material.dart';
 
 class resultShow extends StatelessWidget {
 
+  resultShow({@required this.result,@required this.resultMassage,@required this.resultText});
+ final String resultText;
+ final String result;
+ final String resultMassage;
 
   @override
   Widget build(BuildContext context) {
@@ -33,16 +37,16 @@ class resultShow extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text("Normal",
+                Text(resultText,
                     style: kResultTextStyle,
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                    'Result',
+                    result,
                   style: khomeHeightCardHeightTextStyle,
                   textAlign: TextAlign.center,
                   ),
-                Text("HAPPY HAPPY Massage",
+                Text(resultMassage,
                   style: kResultMassageStyle,
                   textAlign: TextAlign.center,
                 ),
